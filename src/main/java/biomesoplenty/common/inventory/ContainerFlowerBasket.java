@@ -68,7 +68,7 @@ public class ContainerFlowerBasket extends Container
     {
         super.onContainerClosed(player);
         
-        if (!player.worldObj.isRemote)
+        if (!player.world.isRemote)
         {
             //Ensure all baskets are closed once the inventory is
             ItemFlowerBasket.clearOpenBaskets(player);

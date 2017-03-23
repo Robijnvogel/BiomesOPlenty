@@ -13,3 +13,5 @@
 BiomesOPlenty.iml
 BiomesOPlenty.ipr
 BiomesOPlenty.iws
+/.nb-gradle/
+.nb-gradle-properties

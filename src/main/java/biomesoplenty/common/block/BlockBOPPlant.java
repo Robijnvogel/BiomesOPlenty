@@ -471,7 +471,7 @@ public class BlockBOPPlant extends BlockBOPDecoration implements IShearable, IHo
                 EntityItem berries = new EntityItem(worldIn, (double)pos.getX(), (double)pos.getY(), (double)pos.getZ(), new ItemStack(BOPItems.berries));
                 if (!worldIn.isRemote)
                 {
-                    worldIn.spawnEntityInWorld(berries);
+                    worldIn.spawnEntity(berries);
                     if (!(playerIn instanceof FakePlayer))
                     {
                         berries.onCollideWithPlayer(playerIn);

@@ -107,10 +107,10 @@ public class ItemJarEmpty extends Item
             pixie.setDead();
             --stack.stackSize;
             ItemStack pixieJar = new ItemStack(BOPItems.jar_filled, 1, ItemJarFilled.JarContents.PIXIE.ordinal());
-            EntityItem pixieJarEntity = new EntityItem(player.worldObj, player.posX, player.posY, player.posZ, pixieJar);
-            if (!player.worldObj.isRemote)
+            EntityItem pixieJarEntity = new EntityItem(player.world, player.posX, player.posY, player.posZ, pixieJar);
+            if (!player.world.isRemote)
             {
-                player.worldObj.spawnEntityInWorld(pixieJarEntity);
+                player.world.spawnEntity(pixieJarEntity);
                 if (!(player instanceof FakePlayer)) {pixieJarEntity.onCollideWithPlayer(player);}
             }
             return true;
@@ -121,10 +121,10 @@ public class ItemJarEmpty extends Item
             butterfly.setDead();
             --stack.stackSize;
             ItemStack butterflyJar = new ItemStack(BOPItems.jar_filled, 1, ItemJarFilled.JarContents.BUTTERFLY.ordinal());
-            EntityItem butterflyJarEntity = new EntityItem(player.worldObj, player.posX, player.posY, player.posZ, butterflyJar);
-            if (!player.worldObj.isRemote)
+            EntityItem butterflyJarEntity = new EntityItem(player.world, player.posX, player.posY, player.posZ, butterflyJar);
+            if (!player.world.isRemote)
             {
-                player.worldObj.spawnEntityInWorld(butterflyJarEntity);
+                player.world.spawnEntity(butterflyJarEntity);
                 if (!(player instanceof FakePlayer)) {butterflyJarEntity.onCollideWithPlayer(player);}
             }
             return true;

@@ -71,7 +71,7 @@ public class ItemBOPSpawnEgg extends Item implements IColoredItem
             entityliving.rotationYawHead = entityliving.rotationYaw;
             entityliving.renderYawOffset = entityliving.rotationYaw;
             entityliving.onInitialSpawn(worldIn.getDifficultyForLocation(new BlockPos(entityliving)), (IEntityLivingData)null);
-            worldIn.spawnEntityInWorld(entity);
+            worldIn.spawnEntity(entity);
             entityliving.playLivingSound();
         }
 

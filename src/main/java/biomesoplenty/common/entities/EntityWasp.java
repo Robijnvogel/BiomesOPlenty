@@ -109,7 +109,7 @@ public class EntityWasp extends EntityFlying implements IMob {
             this.distY = this.posY - this.wasp.posY;
             this.distZ = this.posZ - this.wasp.posZ;
             
-            this.dist = (double)MathHelper.sqrt_double(this.distX * this.distX + this.distY * this.distY + this.distZ * this.distZ);
+            this.dist = (double)MathHelper.sqrt(this.distX * this.distX + this.distY * this.distY + this.distZ * this.distZ);
             
             // (aimX,aimY,aimZ) is a unit vector in the direction we want to go
             if (this.dist == 0.0D)
@@ -129,7 +129,7 @@ public class EntityWasp extends EntityFlying implements IMob {
         public boolean isBoxBlocked(AxisAlignedBB box)
         {
             //Im assuming this does what getCubes did. If not, im terribly sorry - Topisani
-            return !this.wasp.worldObj.getCollisionBoxes(this.wasp, box).isEmpty();
+            return !this.wasp.world.getCollisionBoxes(this.wasp, box).isEmpty();
         }
         
         // check nothing will collide with the wasp in the direction of aim, for howFar units (or until the destination - whichever is closer)

@@ -125,12 +125,12 @@ public class ItemJarFilled extends Item
         {
             EntityPixie pixie = new EntityPixie(world);                    
             pixie.setLocationAndAngles(releasePoint.xCoord, releasePoint.yCoord, releasePoint.zCoord, MathHelper.wrapDegrees(world.rand.nextFloat() * 360.0F), 0.0F);
-            world.spawnEntityInWorld(pixie);
+            world.spawnEntity(pixie);
             pixie.playLivingSound();
             if (stack.hasDisplayName()) {pixie.setCustomNameTag(stack.getDisplayName());}
             return true;
         } else {
-            player.addChatComponentMessage(new TextComponentString("\u00a75Pixies cannot survive in this environment!"));
+            player.sendMessage(new TextComponentString("\u00a75Pixies cannot survive in this environment!"));
             return false;
         }
     }
@@ -141,12 +141,12 @@ public class ItemJarFilled extends Item
         {
             EntityButterfly butterfly = new EntityButterfly(world);                    
             butterfly.setLocationAndAngles(releasePoint.xCoord, releasePoint.yCoord, releasePoint.zCoord, MathHelper.wrapDegrees(world.rand.nextFloat() * 360.0F), 0.0F);
-            world.spawnEntityInWorld(butterfly);
+            world.spawnEntity(butterfly);
             butterfly.playLivingSound();
             if (stack.hasDisplayName()) {butterfly.setCustomNameTag(stack.getDisplayName());}
             return true;
         } else {
-            player.addChatComponentMessage(new TextComponentString("\u00a75Butterflies cannot survive in this environment!"));
+            player.sendMessage(new TextComponentString("\u00a75Butterflies cannot survive in this environment!"));
             return false;
         }
     }

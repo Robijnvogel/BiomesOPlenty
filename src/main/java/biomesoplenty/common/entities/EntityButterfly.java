@@ -110,7 +110,7 @@ public class EntityButterfly extends EntityFlying implements IMob {
     {
     	BlockPos blockpos = new BlockPos(this.posX, this.getEntityBoundingBox().minY, this.posZ);
 
-        if (blockpos.getY() <= this.worldObj.getSeaLevel())
+        if (blockpos.getY() <= this.world.getSeaLevel())
         {
             return false;
         }
@@ -122,7 +122,7 @@ public class EntityButterfly extends EntityFlying implements IMob {
 	        }
         	else
         	{
-	        	int light = this.worldObj.getLightFromNeighbors(blockpos);
+	        	int light = this.world.getLightFromNeighbors(blockpos);
 	        	
 	        	return light > 8 && super.getCanSpawnHere();
         	}
@@ -169,7 +169,7 @@ public class EntityButterfly extends EntityFlying implements IMob {
             this.distY = this.posY - this.butterfly.posY;
             this.distZ = this.posZ - this.butterfly.posZ;
             
-            this.dist = (double)MathHelper.sqrt_double(this.distX * this.distX + this.distY * this.distY + this.distZ * this.distZ);
+            this.dist = (double)MathHelper.sqrt(this.distX * this.distX + this.distY * this.distY + this.distZ * this.distZ);
             
             // (aimX,aimY,aimZ) is a unit vector in the direction we want to go
             if (this.dist == 0.0D)
@@ -188,7 +188,7 @@ public class EntityButterfly extends EntityFlying implements IMob {
         
         public boolean isBoxBlocked(AxisAlignedBB box)
         {
-            return !this.butterfly.worldObj.getCollisionBoxes(this.butterfly, box).isEmpty();
+            return !this.butterfly.world.getCollisionBoxes(this.butterfly, box).isEmpty();
         }
         
         // check nothing will collide with the butterfly in the direction of aim, for howFar units (or until the destination - whichever is closer)

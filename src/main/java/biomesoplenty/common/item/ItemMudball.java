@@ -42,7 +42,7 @@ public class ItemMudball extends Item
         {
         	EntityMudball mudball = new EntityMudball(world, player);
         	mudball.setHeadingFromThrower(player, player.rotationPitch, player.rotationYaw, 0.0F, 1.5F, 1.0F);
-            world.spawnEntityInWorld(mudball);
+            world.spawnEntity(mudball);
         }
 
         player.addStat(StatList.getObjectUseStats(this));
