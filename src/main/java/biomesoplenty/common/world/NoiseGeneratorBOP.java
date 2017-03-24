@@ -81,7 +81,7 @@ public class NoiseGeneratorBOP extends NoiseGenerator
     
     public double wraparound(double d)
     {
-        long intD = MathHelper.floor(d);
+        long intD = MathHelper.lfloor(d);
         return d - intD + (intD % 0x1000000);        
     }
 
